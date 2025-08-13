@@ -3,13 +3,31 @@ export function navbar() {
 
   if (navbar) {
     navbar.innerHTML = `
+      <style>
+        /* Icono hamburguesa visible en móvil */
+        .navbar-dark .navbar-toggler {
+          border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .navbar-dark .navbar-toggler-icon {
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30'
+            xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,0,1)' 
+            stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' 
+            d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        .navbar-dark .navbar-toggler:hover,
+        .navbar-dark .navbar-toggler:focus {
+          border-color: rgba(255, 255, 0, 0.8);
+        }
+      </style>
+
       <nav class="navbar navbar-expand-lg fixed-top navbar-dark custom-navbar">
         <div class="container-fluid">
           <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
-<a class="navbar-brand" href="index.html">
-  <img src="assets/logo.png" alt="Joaisoft Logo" height="36" class="me-2" />
-</a>
-    
+            <a class="navbar-brand" href="index.html">
+              <img src="assets/logo.png" alt="Joaisoft Logo" height="36" class="me-2" />
+            </a>
           </a>
 
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,19 +37,13 @@ export function navbar() {
           <div class="collapse navbar-collapse" id="mainNav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item has-sub" data-menu="desarrollo">
-                <a class="nav-link has-sub" href="#" data-menu="desarrollo">
-                  Desarrollo
-                </a>
+                <a class="nav-link has-sub" href="#" data-menu="desarrollo">Desarrollo</a>
               </li>
               <li class="nav-item has-sub" data-menu="marketing">
-                <a class="nav-link has-sub" href="#" data-menu="marketing">
-                  Marketing
-                </a>
+                <a class="nav-link has-sub" href="#" data-menu="marketing">Marketing</a>
               </li>
               <li class="nav-item has-sub" data-menu="branding">
-                <a class="nav-link has-sub" href="#" data-menu="branding">
-                  Branding
-                </a>
+                <a class="nav-link has-sub" href="#" data-menu="branding">Branding</a>
               </li>
             </ul>
 
@@ -39,7 +51,6 @@ export function navbar() {
               <a href="contacto.html" class="btn btn-gradient">> HÁBLANOS</a>
             </div>
 
-            <!-- Mega menú dentro del colapsable -->
             <div class="mega-menu-container d-none" id="megaMenu">
               <div class="container mega-menu-grid py-4">
                 <div id="submenu-desarrollo" class="submenu d-none">
@@ -63,9 +74,8 @@ export function navbar() {
                 </div>
               </div>
             </div>
-
-          </div> <!-- FIN collapse -->
-        </div> <!-- FIN container-fluid -->
+          </div>
+        </div>
       </nav>
     `;
 
