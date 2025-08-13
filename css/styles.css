@@ -22,6 +22,8 @@ body {
 .navbar-toggler {
   z-index: 999;
   position: relative;
+    color: #000;
+
 }
 
 .custom-navbar {
@@ -624,3 +626,4 @@ body {
   .footer-toools .footer-bottom{ padding: 24px 0 64px; }
   .footer-toools{ --brand-size:48px; }
 }
+
