@@ -19,12 +19,67 @@ body {
 
 /* === NAVBAR PRINCIPAL CLARA Y MODERNA === */
 
+/* Botón hamburguesa - Versión mejorada */
 .navbar-toggler {
   z-index: 999;
   position: relative;
-    color: #000;
-
+  border: none;
+  background-color: transparent;
+  outline: none;
 }
+
+.navbar-toggler-icon {
+  background-image: none; /* Quitamos el icono por defecto de Bootstrap */
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background-color: #000; /* Color de las líneas */
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-toggler-icon::before {
+  top: -8px;
+}
+
+.navbar-toggler-icon::after {
+  top: 8px;
+}
+
+/* Hover y foco */
+.navbar-toggler:hover .navbar-toggler-icon,
+.navbar-toggler:focus .navbar-toggler-icon,
+.navbar-toggler:hover .navbar-toggler-icon::before,
+.navbar-toggler:hover .navbar-toggler-icon::after {
+  background-color: #f7542b; /* Color de hover (naranja corporativo) */
+}
+
+/* Cuando está abierto (opcional animación de X) */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background-color: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
 
 .custom-navbar {
   background-color: #f5f5f5;
@@ -626,4 +681,5 @@ body {
   .footer-toools .footer-bottom{ padding: 24px 0 64px; }
   .footer-toools{ --brand-size:48px; }
 }
+
 
